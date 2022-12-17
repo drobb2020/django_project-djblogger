@@ -1,6 +1,6 @@
 # VSCode settings.json configuration
 
-Add the following code to .vscode/settings.json to configure black
+Add the following code to .vscode/settings.json to configure black and flake8
 
 ```sh
 {
@@ -8,6 +8,13 @@ Add the following code to .vscode/settings.json to configure black
   "python.formatting.provider": "black",
   "python.formatting.blackArgs": [
     "--line-length",
+    "88"
+  ],
+  "python.linting.enabled": true,
+  "python.linting.lintOnSave": true,
+  "python.linting.flake8Enabled": true,
+  "python.linting.flake8Args": [
+    "--max-line-length",
     "88"
   ],
   "[python]": {
