@@ -4,5 +4,5 @@ A Udemy Course
 
 ## Branches
 
-main
-dev-v1.0.1
+- main
+- dev-v1.0.1
