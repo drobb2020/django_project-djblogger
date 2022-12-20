@@ -1,0 +1,19 @@
+{% extends "../3-col-template.html" %}
+
+{% block content-left %}
+{% include "../secondary-navbar.html" %}
+{% endblock content-left %}
+
+{% block content-center %}
+
+<div class="center mx-auto" style="max-width: 683px;">
+    <h1 class="py-5 fs-1 fw-bold">{{ tag|upper }}</h1>
+
+    {% include "blog/components/post-list-elements-tags.html" %}
+</div>
+
+{% endblock content-center %}
+
+{% block content-right %}
+{% sidebar_tag_cloud %}
+{% endblock content-right %}
