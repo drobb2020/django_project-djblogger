@@ -1,0 +1,40 @@
+<style>
+  p {
+    font-family: 'Merriweather', serif;
+    line-height: 22px;
+  }
+</style>
+
+{% for post in posts %}
+<a href="{{ post.get_absolute_url }}" class="text-decoration-none">
+  {% if forloop.last and page_obj.has_next %}
+  <div
+    class="card border-0 pb-3 pb-sm-5"
+    hx-trigger="revealed"
+    hx-get="{{ request.path }}?page={{ page_obj.number|add:1 }}"
+    hx-swap="afterend"
+  >
+  {% else %}
+  <div class="card border-0 border-bottom border-1 pt-3 pb-3 pb-sm-5">
+  {% endif %}
+    <div class="row">
+      <div class="col-9">
+        <div class="card-body">
+          <div class="pb-2 text-body infscroll-author small fw-bold">{{ post.author }}</div>
+          <h1 class="mb-1 fw-bold text-body infscroll-title">
+            {{ post.title|truncatechars:40 }}
+          </h1>
+          <p class="text-dark d-none d-sm-block fs-14">{{ post.content|truncatechars:180 }}</p>
+        </div>
+      </div>
+      <div class="col-3">
+        <img
+          src="https://picsum.photos/115/115"
+          alt=""
+          class="img-fluid float-end"
+        />
+      </div>
+    </div>
+  </div>
+</a>
+{% endfor %}
