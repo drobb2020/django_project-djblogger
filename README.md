@@ -9,3 +9,4 @@ A Udemy Course
 - dev-1.0.2a
 - dev-1.0.3
 - dev-v1.0.4
+- dev-v1.0.5
