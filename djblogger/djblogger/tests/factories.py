@@ -3,13 +3,15 @@ from django.contrib.auth.models import User
 
 from djblogger.blog.models import Post
 
+from decouple import config
+
 
 class UserFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = User
 
-    password = "testing123"
-    username = "testuser"
+    username = config('USERNAME')
+    password = config('PASSWORD')
     is_superuser = True
     is_staff = True
 
