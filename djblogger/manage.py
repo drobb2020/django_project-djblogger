@@ -2,14 +2,16 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+
 from djblogger.settings import base
+
 
 def main():
     """Run administrative tasks."""
     if base.DEBUG:
-        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'djblogger.settings.local')
+        os.environ.setdefault("DJANGO_SETTINGS_MODULE", "djblogger.settings.local")
     else:
-        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'djblogger.settings.production')
+        os.environ.setdefault("DJANGO_SETTINGS_MODULE", "djblogger.settings.production")
 
     try:
         from django.core.management import execute_from_command_line
@@ -22,5 +24,6 @@ def main():
     execute_from_command_line(sys.argv)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
+    main()
     main()
